@@ -9,10 +9,10 @@ require './nameable'
 require './book'
 require './rental'
 
-alycia = Student.new(17, 'Alycia', parent_permission: true)
-octavia = Student.new(16, 'Octavia', parent_permission: false)
-clarke = Student.new(16, 'Clarke')
-raven = Student.new(19, 'Raven')
+alycia = Student.new('Art', 17, 'Alycia', parent_permission: true)
+octavia = Student.new('Art', 16, 'Octavia', parent_permission: false)
+clarke = Student.new('Art', 16, 'Clarke')
+raven = Student.new('Art', 19, 'Raven')
 math = Classroom.new('Math')
 puts math.students
 puts alycia.classroom
@@ -43,10 +43,16 @@ puts math.students.last.name
 
 book_one = Book.new('Title One', 'Author One')
 book_two = Book.new('Title Two', 'Author Two')
+book_three = Book.new('Title Three', 'Author Three')
 Rental.new('2023-03-07', alycia, book_one)
 Rental.new('2023-07-03', alycia, book_one)
 puts alycia.rentals.count
+alycia.add_rental('2022-12-12', book_three)
 puts(alycia.rentals.map(&:date))
+puts 'test'
+book_three.add_rental('2021-12-12', octavia)
+book_two.add_rental('2021-11-12', octavia)
+puts(octavia.rentals.map(&:date))
 puts book_one.rentals.count
 puts book_two.rentals.count
 puts(book_two.rentals.map { |rental| rental.book.title })
