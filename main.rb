@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require './app'
 MyApp = App.new
 def show_list
