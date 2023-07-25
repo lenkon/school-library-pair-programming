@@ -1,5 +1,12 @@
 require './person'
 class Student < Person
+  attr_reader :classroom
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
+  end
+
   def initialize(classroom, age, name, parent_permission: true)
     super(age, name, parent_permission: parent_permission)
     @classroom = classroom
@@ -9,10 +16,3 @@ class Student < Person
     '¯(ツ)/¯'
   end
 end
-
-lexa = Student.new('Math', 21, 'Lexa')
-puts lexa.id
-puts lexa.name
-puts lexa.age
-puts lexa.can_use_services?
-puts lexa.play_hooky

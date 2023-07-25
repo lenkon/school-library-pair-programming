@@ -9,9 +9,3 @@ class Teacher < Person
     true
   end
 end
-
-jon = Teacher.new('English', 30, 'Jon')
-puts jon.id
-puts jon.name
-puts jon.age
-puts jon.can_use_services?
