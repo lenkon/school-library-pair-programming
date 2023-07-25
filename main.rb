@@ -44,5 +44,4 @@ def main
   puts 'Welcome to school library App!'
   list_options
 end
-
 main
