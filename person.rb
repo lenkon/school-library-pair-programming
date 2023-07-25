@@ -1,13 +1,21 @@
-class Person
+require './nameable'
+require './capitalize_decorator'
+require './trimmer_decorator'
+class Person < Nameable
+  attr_reader :id
+  attr_accessor :name, :age
+
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = rand(1..1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
   end
 
-  attr_reader :id
-  attr_accessor :name, :age
+  def correct_name
+    @name
+  end
 
   def can_use_services?
     of_age? || @parent_permission
@@ -20,8 +28,9 @@ class Person
   end
 end
 
-# alycia = Person.new(17,'Alycia', parent_permission: false)
-# puts alycia.id
-# puts alycia.name
-# puts alycia.age
-# puts alycia.can_use_services?
+person = Person.new(22, 'maximilianus')
+person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+puts capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+puts capitalized_trimmed_person.correct_name
