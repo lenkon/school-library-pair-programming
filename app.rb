@@ -45,7 +45,7 @@ class App
     else
       print 'Invalid value! '
     end
-    @people_list << Student.new(nil, student_age, student_name, parent_permission: parent_permission)
+    @people_list << Student.new(students_age, student_name, parent_permission: parent_permission)
     puts 'Person created successfully'
   end
 
@@ -108,6 +108,7 @@ class App
     person_obj = @people_list.find { |person| person.id == person_id }
     puts 'Rentals:'
     person_obj.rentals.each do |rental|
+      # binding.pry
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
