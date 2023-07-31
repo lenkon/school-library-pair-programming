@@ -94,6 +94,9 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/MohametAlmeari)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamet-almeari)
 
+👤 **Inoulen**
+
+- GitHub: [@K Inoulen Shanongba](https://github.com/lenkon)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,6 +105,7 @@ To run tests, run the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Add basic UI.**
+- [ ] **Refactor code.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
