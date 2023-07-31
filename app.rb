@@ -10,9 +10,19 @@ require './book'
 require './rental'
 
 class App
+  attr_reader :options
+
   def initialize(books_list = [], people_list = [])
     @books_list = books_list
     @people_list = people_list
+    @options = {
+      '1' => :list_books,
+      '2' => :list_people,
+      '3' => :create_person,
+      '4' => :create_book,
+      '5' => :create_rental,
+      '6' => :list_rentals
+    }
   end
 
   def list_books
