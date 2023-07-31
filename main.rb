@@ -1,10 +1,11 @@
 require './app'
+
 MyApp = App.new
 
 def choose_option
   MyApp.show_list
   option = gets.chomp
-  return false if option == '7'
+  return MyApp.save_exit if option == '7'
 
   action = MyApp.options[option]
   if action
