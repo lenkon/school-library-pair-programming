@@ -4,6 +4,7 @@ require './app'
 class Open
   def books
     return [] unless File.exist?('books.json')
+
     list = JSON.parse(File.read('books.json'))
     books_list = []
     list.each do |book|
@@ -14,6 +15,7 @@ class Open
 
   def people
     return [] unless File.exist?('people.json')
+
     list = JSON.parse(File.read('people.json'))
     people_list = []
     list.each do |person|
@@ -28,6 +30,7 @@ class Open
 
   def rentals(books, people)
     return [] unless File.exist?('rentals.json')
+
     list = JSON.parse(File.read('rentals.json'))
     list.each do |book|
       book.each do |rental|
