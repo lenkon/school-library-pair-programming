@@ -28,4 +28,10 @@ describe Student do
       expect(@student.play_hooky).to be == '¯(ツ)/¯'
     end
   end
+
+  context 'test use services' do
+    it 'can not use services' do
+      expect(@student.can_use_services?).to be false
+    end
+  end
 end

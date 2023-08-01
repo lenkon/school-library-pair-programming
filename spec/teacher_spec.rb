@@ -22,4 +22,10 @@ describe Teacher do
       expect(@teacher.specialization).to be == 'Art'
     end
   end
+
+  context 'test use services' do
+    it 'can use services' do
+      expect(@teacher.can_use_services?).to be true
+    end
+  end
 end

@@ -1,4 +1,5 @@
 require_relative '../book'
+require_relative '../student'
 describe Book do
   before :each do
     @book = Book.new 'Game of Thrones', 'George Martin'
@@ -16,6 +17,18 @@ describe Book do
 
     it 'returns author' do
       expect(@book.author).to be == 'George Martin'
+    end
+  end
+
+  context 'test add rentals' do
+    it 'has no rentals' do
+      expect(@book.rentals.length).to be == 0
+    end
+
+    it 'has one rental' do
+      student = Student.new 15, 'Lexa', false
+      @book.add_rental('2021/01/01', student)
+      expect(@book.rentals.length).to be == 1
     end
   end
 end
