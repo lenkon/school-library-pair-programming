@@ -8,6 +8,8 @@ require './book'
 require './rental'
 require './create'
 require './list'
+require './save'
+require './open_files'
 
 class App
   attr_reader :options
@@ -25,6 +27,23 @@ class App
     }
     @create = Create.new
     @list = List.new
+    @save = Save.new
+    @open = Open.new
+
+    open_saved
+  end
+
+  def open_saved
+    @books_list = @open.books
+    @people_list = @open.people
+    @open.rentals(@books_list, @people_list)
+  end
+
+  def save_exit
+    @save.books(@books_list)
+    @save.people(@people_list)
+    @save.rentals(@books_list, @people_list)
+    false
   end
 
   def show_list
